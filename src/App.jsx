@@ -9,7 +9,7 @@ import "./App.css";
 
 function App() {
     return (
-        <BrowserRouter basename="/React-final-project/Expense-tracker">
+        <BrowserRouter basename="/React-final-project/">
         <Header />
             <Routes>
                 <Route path="/" element={<Home />} />
