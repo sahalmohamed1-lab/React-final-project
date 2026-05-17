@@ -1,11 +1,13 @@
 /* eslint-disable */
 import { createContext, useContext, useEffect, useState } from "react";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth } from "../services/firebase";
 
 export const AuthContext = createContext();
 
 export const useAuth = () => useContext(AuthContext);
+
+const googleProvider = new GoogleAuthProvider();
 
 function AuthProvider({ children }) {
     const [user, setUser] = useState(null);
@@ -17,6 +19,11 @@ function AuthProvider({ children }) {
 
     const login = (email, password) => {
         return signInWithEmailAndPassword(auth, email, password);
+    };
+
+    const googleLogin = async () => {
+     const result = await signInWithPopup(auth, googleProvider);
+     return result.user;
     };
 
     const logout = () => {
@@ -32,7 +39,7 @@ function AuthProvider({ children }) {
     }, []);
 
     return (
-        <AuthContext.Provider value={{ user, signup, login, logout, isAuthenticated: !!user }} >
+        <AuthContext.Provider value={{ user, signup, login, googleLogin, logout, isAuthenticated: !!user }} >
             {!loading && children}
         </AuthContext.Provider>
     );

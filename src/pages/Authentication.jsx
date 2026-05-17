@@ -30,6 +30,13 @@ function Authentication() {
         }
     };
 
+    const { googleLogin } = useAuth();
+
+    const handleGoogleLogin = async () => {
+     await googleLogin();
+     navigate("/dashboard");
+    };
+
     return (
         <div className="max-w-md mx-auto mt-10 bg-white p-6 rounded-xl shadow">
             <h2 className="text-2xl font-bold mb-4 text-center color-black">
@@ -53,6 +60,7 @@ function Authentication() {
                 <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded" >
                     {isLogin ? "Login" : "Sign Up"}
                 </button>
+                <button onClick={handleGoogleLogin}>Continue with Google</button>
             </form>
             <p onClick={() => setIsLogin(!isLogin)} className="mt-4 text-center text-blue-500 cursor-pointer" >
                 {isLogin
