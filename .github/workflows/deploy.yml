@@ -9,19 +9,18 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    defaults:
-      run:
-        working-directory: Expense-tracker
-
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install dependencies
-        run: npm install
+      - name: Show files (debug)
+        run: ls -R
+
+      - name: Move into project folder
+        run: cd Expense-tracker && npm install
 
       - name: Build project
-        run: npm run build
+        run: cd Expense-tracker && npm run build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
