@@ -1,32 +1,26 @@
-name: Deploy Vite App to GitHub Pages
+name: Deploy React App
 
 on:
   push:
     branches: [main]
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: Expense-tracker
 
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
       - name: Install dependencies
-        working-directory: Expense-tracker
         run: npm install
 
       - name: Build project
-        working-directory: Expense-tracker
         run: npm run build
 
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: Expense-tracker/dist
+        run: npm run deploy
