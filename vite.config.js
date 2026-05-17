@@ -15,5 +15,5 @@ export default defineConfig({
     environment: "jsdom",
     setupFiles: "./src/tests/setup.js"
   },
-  base: '/React-final-project/'
+  base: './'
 })
