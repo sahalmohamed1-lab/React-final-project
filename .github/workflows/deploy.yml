@@ -13,21 +13,16 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Use Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 18
+          cache: npm
 
       - name: Install dependencies
+        working-directory: ./Expense-tracker
         run: npm install
-        working-directory: Expense-tracker
 
       - name: Build project
+        working-directory: ./Expense-tracker
         run: npm run build
-        working-directory: Expense-tracker
-
-      - name: Upload build artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: build
-          path: Expense-tracker/dist
