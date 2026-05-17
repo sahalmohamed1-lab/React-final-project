@@ -28,7 +28,7 @@ If you are developing a production application, we recommend using TypeScript wi
 - [Installation](#Installation)
 - [Usage](#Usage)
 - [Features](#Features)
-- [Technologies-used](#Technologies Used)
+- [Technologies-used](#technologies-used)
 - [Contribution](#Contribution)
 - [License](#License)
 
