@@ -1,0 +1,41 @@
+{
+  "expenses": [
+    {
+      "id": "1",
+      "title": "Lunch",
+      "amount": 300,
+      "category": "Food",
+      "date": "2026-05-13"
+    },
+    {
+      "id": "2",
+      "title": "Movie",
+      "amount": 500,
+      "category": "Entertainment",
+      "date": "2026-05-14"
+    },
+    {
+      "title": "Dinner",
+      "amount": 200,
+      "category": "Food",
+      "date": "2026-05-14",
+      "id": "1H8tRe0PWMY"
+    },
+    {
+      "title": "Lunch",
+      "amount": 200,
+      "category": "Food",
+      "date": "2026-05-15",
+      "userEmail": "john@gmail.com",
+      "id": "jzjva9wlvDs"
+    },
+    {
+      "title": "Hike",
+      "amount": 200,
+      "category": "Travel",
+      "date": "2026-05-15",
+      "userEmail": "John@gmail.com",
+      "id": "z6JlCfVH48Q"
+    }
+  ]
+}
