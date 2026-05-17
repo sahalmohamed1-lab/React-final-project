@@ -25,3 +25,9 @@ jobs:
       - name: Build project
         run: npm run build
         working-directory: Expense-tracker
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: build
+          path: Expense-tracker/dist
