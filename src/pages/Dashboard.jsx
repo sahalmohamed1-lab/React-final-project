@@ -1,11 +1,10 @@
 import ExpenseForm from "../components/ExpenseForm";
 import ExpenseList from "../components/ExpenseList";
+import ExpenseSummary from "../components/ExpenseSummary";
 import { useExpense } from "../hooks/UseExpense";
 
 function Dashboard() {
     const { expenses } = useExpense();
-
-    const total = expenses.reduce((sum, item) => sum + Number(item.amount), 0);
 
     const highest = expenses.length
         ? Math.max(...expenses.map(e => Number(e.amount)))
@@ -16,8 +15,7 @@ function Dashboard() {
             <h2 className="text-3xl font-bold mb-6 text-gray-600">Dashboard</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
                 <div className="bg-white p-4 rounded-lg shadow">
-                    <p className="text-gray-500">Total Spending</p>
-                    <h3 className="text-2xl font-bold text-purple-600">KES {total}</h3>
+                    <ExpenseSummary />
                 </div>
                 <div className="bg-white p-4 rounded-lg shadow">
                     <p className="text-gray-500">Highest Expense</p>
