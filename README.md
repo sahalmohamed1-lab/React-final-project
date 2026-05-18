@@ -1,7 +1,11 @@
+## Project name
+> EXpense Tracker.
+
 ## Project overview
 > Expense tracker is an app that helps a user keep track of his/her transactions by allowing them to add, update and delete a transaction.
 
 ## Table of Content
+- [Project-name](#project-name)
 - [Project-overview](#project-overview)
 - [Installation](#Installation)
 - [Usage](#Usage)
